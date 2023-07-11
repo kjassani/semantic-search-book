@@ -3,7 +3,6 @@ from langchain.document_loaders import UnstructuredPDFLoader, OnlinePDFLoader, P
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
 import requests
-# from PyPDF2 import PdfFileReader
 from langchain.vectorstores import Chroma, Pinecone
 from langchain.embeddings.openai import OpenAIEmbeddings
 import pinecone
