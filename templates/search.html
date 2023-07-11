@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Semantic Search: The Intelligent Investor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        img {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: auto;
+        }
+        form {
+            margin: 20px 0;
+        }
+        h2 {
+            text-align: center;
+            font-style: italic;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+    <script>
+        var i = 0;
+        var queries = ["Ask A Query.", "Who is an intelligent investor?", "Who is Mr market?", "What are the key principles of fundamental analysis?"];
+        var currentQuery = "";
+        var placeholderText = "";
+
+        // Start typing effect
+        function type() {
+            if (placeholderText.length < currentQuery.length) {
+                placeholderText += currentQuery.charAt(placeholderText.length);
+                document.getElementById("query").placeholder = placeholderText;
+                setTimeout(type, 100); // faster typing speed
+            } else {
+                setTimeout(erase, 2000); // longer pause
+            }
+        };
+
+        // Start erase effect
+        function erase() {
+            if (placeholderText.length > 0) {
+                placeholderText = currentQuery.substring(0, placeholderText.length - 1);
+                document.getElementById("query").placeholder = placeholderText;
+                setTimeout(erase, 100);
+            } else {
+                // Switch to next query
+                i++;
+                if (i >= queries.length) i = 0;
+                currentQuery = queries[i];
+                type();
+            }
+        };
+
+        // Start the typing effect on window load
+        window.onload = function () {
+            currentQuery = queries[0];
+            type();
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Semantic Search: The Intelligent Investor</h1>
+        <img src="https://tinyurl.com/bdzmtabe" alt="Cover Image">
+        <form action="/" method="post">
+            <div class="form-group">
+                <h2>Ask Benjamin Graham Anything!</h2>
+                <input type="text" id="query" name="query" required class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        {% if response %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Search Results:</h5>
+                <p class="card-text">{{ response }}</p>
+            </div>
+        </div>
+        {% endif %}
+        <footer>
+            This project was created by <a href="https://www.linkedin.com/in/karim-jassani/">Karim Jassani</a> 
+            <br>
+            Check out the source code on <a href="https://github.com/kjassani">GitHub</a>
+        </footer>
+    </div>
+</body>
+</html>
