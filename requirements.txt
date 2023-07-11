@@ -24,7 +24,6 @@ cfgv
 charset-normalizer
 click
 comm
-//conda==23.1.0
 conda-content-trust
 conda-package-handling
 cryptography
