@@ -5,4 +5,4 @@ through Python for unstructured PDF data processing; leveraged Bootstrap and HTM
 similarity searches, and summarized results from top-ranked documents in natural language.
 - Implemented Pinecone vector database, enabling vector similarity searches based on cosine similarity.
 
-[Click here to watch the Demo] [https://vimeo.com/847496379?share=copy)https://vimeo.com/847496379?share=copy]
+[CLICK HERE to watch the Demo] (https://vimeo.com/847496379?share=copy)https://vimeo.com/847496379?share=copy)
